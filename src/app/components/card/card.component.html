@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card_img">
+    <img [src]="data?.image" alt="avatar"/>
+  </div>
+  <div class="card_content">
+    <div class="card_content_item">
+      <span class="card_content_item_label">
+        Name:
+      </span>
+      <span class="card_content_item_value">
+        <span>{{ data?.name }}</span>
+      </span>
+    </div>
+    <div class="card_content_item">
+      <span class="card_content_item_label">
+        Gender:
+      </span>
+      <span>{{ data?.gender }}</span>
+    </div>
+    <div class="card_content_item">
+      <span class="card_content_item_label">
+        Status:
+      </span>
+      <span>{{ data?.status }}</span>
+    </div>
+    <div class="card_content_item">
+      <span class="card_content_item_label">
+        Episodes:
+      </span>
+      <p *ngFor="let episode of episodes">
+        {{ episode?.name }}
+      </p>
+    </div>
+  </div>
+</div>

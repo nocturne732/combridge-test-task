@@ -10,6 +10,7 @@ import { CharacterComponent } from './pages/character/character.component';
 import {CharacterService} from "./services/character.service";
 import {HttpClientModule} from "@angular/common/http";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CharacterComponent
+    CharacterComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

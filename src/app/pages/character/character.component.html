@@ -1,41 +1,15 @@
-<button routerLink="['..']">Back!</button>
-
-<div class="card" *ngIf="character; else error">
-  <div class="card_img">
-    <img [src]="character.image" alt="avatar"/>
+<div class="container" *ngIf="character; else error">
+  <div class="row">
+    <div class="col-md-12">
+      <button routerLink="['..']">Back!</button>
+    </div>
   </div>
-  <div class="card_content">
-    <div class="card_content_item">
-      <span class="card_content_item_label">
-        Name:
-      </span>
-      <span class="card_content_item_value">
-        <span>{{ character.name }}</span>
-      </span>
-    </div>
-    <div class="card_content_item">
-      <span class="card_content_item_label">
-        Gender:
-      </span>
-      <span>{{ character.gender }}</span>
-    </div>
-    <div class="card_content_item">
-      <span class="card_content_item_label">
-        Status:
-      </span>
-      <span>{{ character.status }}</span>
-    </div>
-    <div class="card_content_item">
-      <span class="card_content_item_label">
-        Episodes:
-      </span>
-      <p *ngFor="let episode of episodes">
-        {{ episode.name }}
-      </p>
+  <div class="row">
+    <div class="col-md-6">
+      <app-card [data]="character" [episodes]="episodes"></app-card>
     </div>
   </div>
 </div>
-
 <ng-template #error>
   <div>
     <h2>Such hero don't exists</h2>
