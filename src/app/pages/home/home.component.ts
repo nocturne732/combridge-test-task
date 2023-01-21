@@ -12,17 +12,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   page = 0;
   characters: Character[] = [];
   hasNextPage = true;
-  iconsMap = new Map<string, string>([
-    ["Male", "assets/gender-male.svg"],
-    ["Female", "assets/gender-female.svg"],
-    ["unknown", "assets/patch-question.svg"],
-    ["Genderless", "assets/x-circle.svg"]
-  ]);
   destroy$: Subject<boolean> = new Subject<boolean>();
-
-  characterGenderIcon(gender: string): string | undefined {
-    return this.iconsMap.get(gender);
-  }
 
   constructor(
     private characterService: CharacterService

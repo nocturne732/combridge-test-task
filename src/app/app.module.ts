@@ -11,6 +11,7 @@ import {CharacterService} from "./services/character.service";
 import {HttpClientModule} from "@angular/common/http";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import { CardComponent } from './components/card/card.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     HomeComponent,
     CharacterComponent,
-    CardComponent
+    CardComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
