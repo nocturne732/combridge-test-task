@@ -1,4 +1,4 @@
-<table class="table" *ngIf="data">
+<table class="table list" *ngIf="data">
   <thead>
   <tr>
     <th>Avatar</th>
@@ -7,7 +7,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let item of data" [routerLink]="[item.id]" class="character_list_item">
+  <tr *ngFor="let item of data" [routerLink]="[item.id]" class="list_item">
     <td>
       <img [src]="item.image" alt="avatar" width="150" height="150" />
     </td>

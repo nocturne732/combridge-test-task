@@ -1,0 +1,11 @@
+.list {
+  overflow-y: scroll;
+
+  &_item {
+    cursor: pointer;
+  }
+
+  &_item:hover {
+    text-decoration: underline;
+  }
+}
