@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "flexboxgrid/dist/flexboxgrid.css";
 
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
