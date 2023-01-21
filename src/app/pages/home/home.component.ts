@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CharacterService} from "../../services/character.service";
 import {Character} from "../../models/character.model";
-import {map, Observable, Subject, takeUntil} from "rxjs";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   iconsMap = new Map<string, string>([
     ["Male", "assets/gender-male.svg"],
     ["Female", "assets/gender-female.svg"],
-    ["unknown", "assets/patch-question.svg"]
+    ["unknown", "assets/patch-question.svg"],
+    ["Genderless", "assets/x-circle.svg"]
   ]);
   destroy$: Subject<boolean> = new Subject<boolean>();
 
@@ -42,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onScroll(): void {
     if (this.hasNextPage) {
       this.characterService.apiGetCharactersWithPaging((++this.page)).subscribe(((response) => {
-            this.hasNextPage = response.info.next ? true : false;
+            this.hasNextPage = !!response.info.next;
             this.characters.push(...response.results)
           }
         )
